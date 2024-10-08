@@ -1,8 +1,8 @@
-package atividade;
+package atividade0;
 
 import modelo.HelloFromThread;
 
-public class HelloMaster {
+public class HelloMaster1 {
     public void letsGetSomeHello(){
         Thread t1 = new Thread(new HelloFromThread(1));
         Thread t2 = new Thread(new HelloFromThread(2));

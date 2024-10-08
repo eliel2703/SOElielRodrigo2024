@@ -1,10 +1,10 @@
-package modelo;
+package modelo1;
 
-public class HelloFromThread implements Runnable {
+public class HelloFromThread1 implements Runnable {
 
     private int tId;
 
-    public HelloFromThread(int tId){
+    public HelloFromThread1(int tId){
         this.tId = tId;
     }
 
