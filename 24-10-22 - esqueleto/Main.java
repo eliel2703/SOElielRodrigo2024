@@ -1,24 +1,33 @@
-// estes arquivos são apenas o esqueleto do código
-// para prosseguirmos com a aula de Threads
-
 import atividade.AddVetorMaster;
 
-public class Main{
+public class Main {
 
     public static void main(String[] args) {
-        // criar vetores
+        final int TAMANHO = 10;  // Defina o tamanho do vetor
+        final int numThreads = 4; // Defina o número de threads
 
-        // preencher o vetor com números aleatorios do tipo double
-    
-        // instanciar Master
+        // Criar vetores
+        double[] a = new double[TAMANHO];
+        double[] b = new double[TAMANHO];
 
-        // executar Master
+        // Preencher os vetores com números aleatórios do tipo double
+        for (int i = 0; i < TAMANHO; i++) {
+            a[i] = Math.random() * 10; // Valores aleatórios entre 0 e 10
+            b[i] = Math.random() * 10;
+        }
 
-        // pegar e imprimir resultado
+        // Instanciar AddVetorMaster
+        AddVetorMaster master = new AddVetorMaster(a, b, numThreads);
+
+        // Executar o cálculo
+        master.calcVetores();
+
+        // Pegar e imprimir o resultado
+        double[] r = master.getVetorR();
         System.out.print("[ " + r[0]);
-        for(int i = 1; i < TAMANHO-1; i++){
+        for (int i = 1; i < TAMANHO - 1; i++) {
             System.out.print(" | " + r[i]);
         }
-        System.out.println(" | " + r[TAMANHO-1] + " ]");
+        System.out.println(" | " + r[TAMANHO - 1] + " ]");
     }
 }
